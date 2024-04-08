@@ -1,16 +1,27 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def square(arg):
+    return arg ** 2
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+class Sum:
+
+    def __init__(self, val):
+        self.val = val
+
+    def __call__(self, arg):
+        return self.val + arg
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+class Project:
+    def __init__(self, val):
+        self.val = val
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    def method(self, arg):
+        return self.val * arg
+
+
+sobj = Sum(2)
+pobj = Project(3)
+args = (square, sobj, pobj.method)
+
+for arg in args:
+    print(arg(5))
