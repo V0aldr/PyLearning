@@ -14,6 +14,3 @@ class ListInstance:
 if __name__ == '__main__':
     x = ListInstance()
     print(x)
-    print(f"{x.__dict__['_val']=}")
-    print(x._val)
-    print(getattr(x, '_val'))
