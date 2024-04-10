@@ -25,4 +25,5 @@ class ListInherited:
 if __name__ == '__main__':
     import testmixin
     testmixin.tester(ListInherited)
+    print()
 

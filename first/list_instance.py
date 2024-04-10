@@ -12,3 +12,4 @@ class ListInstance:
 if __name__ == '__main__':
     x = ListInstance()
     print(x)
+    print()

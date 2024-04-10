@@ -39,3 +39,4 @@ if __name__ == '__main__':
     test_by_name('list_instance', 'ListInstance', True)
     test_by_name('listinherited', 'ListInherited', True)
     # test_by_name('listtree', 'ListTree', False)
+    print()
