@@ -9,21 +9,25 @@ class ListInherited:
     вызове связанных методов!
     """
 
-    def __attrnames(self):
-        result = ''
+    def __attrnames(self, indent=' '*4):
+        unders = []
+        # result = f"Unders{'-'*77}\n{indent}{', '.join(unders)}\nOthers{'-'*77}\n"
+        result = 'Unders%s\n%s%%s\nOthers%s\n' % ('-'*77, indent, '-'*77)
         for attr in dir(self):
-            if attr.startswith('__') and attr.endswith('__'):
-                result += f'\t{attr}\n'
+            if attr[:2] == '__' and attr[-2:] == '__':
+                unders.append(attr)
             else:
-                result += f"\t{attr} = {getattr(self, attr)}\n"
-        return result
+                display = str(getattr(self, attr))[:82 - (len(indent) - len(attr))]
+                result += f"{indent}{attr} = {display}\n"
+        return result % ', '.join(unders)
 
     def __str__(self):
         return (f"<Instance of {self.__class__.__name__}, adress: {id(self)}>\n"
                 f"{self.__attrnames()}")
 
+
 if __name__ == '__main__':
     import testmixin
+
     testmixin.tester(ListInherited)
     print()
-
