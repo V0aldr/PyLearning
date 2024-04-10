@@ -1,6 +1,4 @@
 class ListInstance:
-    def __init__(self):
-        self._val = '0'
     def __attrnames(self):
         result = ''
         for attr in sorted(self.__dict__):
