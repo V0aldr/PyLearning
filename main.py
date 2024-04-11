@@ -21,7 +21,6 @@ class Project:
 
 sobj = Sum(2)
 pobj = Project(3)
-args = (square, sobj, pobj.method)
 
-for arg in args:
-    print(arg(5))
+
+print(Sum.__dict__)
