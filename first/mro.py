@@ -10,3 +10,4 @@ Y = list(D2.__mro__)
 print(X[3] is Y[2])
 
 print(X, Y, sep='\n')
+
