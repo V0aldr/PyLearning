@@ -36,6 +36,8 @@ y + {'x': 'x'}
 print(y.data)
 y + 1
 print(y.data)
+y + [1]
+print(y.data)
 
 
 
